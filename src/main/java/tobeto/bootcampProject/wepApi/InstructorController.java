@@ -10,7 +10,7 @@ import tobeto.bootcampProject.entity.Instructor;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/instructor")
+@RequestMapping("/instructors")
 public class InstructorController {
     private InstructorRepository instructorRepository;
     public InstructorController(InstructorRepository instructorRepository) {
@@ -19,16 +19,18 @@ public class InstructorController {
 
     @RequestMapping("/getall")
     public List<Instructor> findAll() {
-        return instructorRepository.findAll();
+        List<Instructor> instructors=instructorRepository.findAll();
+        return instructors;
     }
 
-    @PostMapping("/add")
-    public void add() {
+    @RequestMapping("/save")
+    public Instructor instructor() {
         Instructor instructor = new Instructor();
         instructor.setUserName("hatice");
         instructor.setEmail("hatice@gmail.com");
         instructor.setCompanyName("atesscompany");
         instructorRepository.save(instructor);
+        return instructor;
     }
 
 }

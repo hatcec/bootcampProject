@@ -10,7 +10,7 @@ import tobeto.bootcampProject.entity.Employee;
 import java.util.List;
 
 @RestController
-@RequestMapping("/api/employee")
+@RequestMapping("/employees")
 public class EmployeeController {
     private EmployeeRepository employeeRepository;
 
@@ -19,10 +19,11 @@ public class EmployeeController {
     }
     @RequestMapping("/getall")
     public List<Employee> findAll(){
-        return  employeeRepository.findAll();
+        List<Employee> employees=employeeRepository.findAll();
+        return  employees;
     }
-    @PostMapping("/add")
-    public void add() {
+    @RequestMapping("/save")
+    public Employee employee() {
         Employee employee = new Employee();
         employee.setUserName("hatice");
         employee.setFirstName("hatice");
@@ -30,5 +31,7 @@ public class EmployeeController {
         employee.setEmail("h@gmail.com");
         employee.setPosition("IT");
         employee.setPassword("11111");
+        employeeRepository.save(employee);
+        return employee;
     }
 }
