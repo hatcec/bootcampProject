@@ -1,8 +1,16 @@
 package tobeto.bootcampProject.wepApi;
 
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import lombok.AllArgsConstructor;
+import org.springframework.http.HttpStatus;
+import org.springframework.web.bind.annotation.*;
+import tobeto.bootcampProject.business.abstracts.EmployeeService;
+import tobeto.bootcampProject.business.requests.CreateApplicantRequest;
+import tobeto.bootcampProject.business.requests.CreateEmployeeRequest;
+import tobeto.bootcampProject.business.requests.UpdateApplicantRequest;
+import tobeto.bootcampProject.business.requests.UpdateEmployeeRequest;
+import tobeto.bootcampProject.business.responses.GetAllEmployeeResponse;
+import tobeto.bootcampProject.business.responses.GetByIdApplicantResponse;
+import tobeto.bootcampProject.business.responses.GetByIdEmployeeResponse;
 import tobeto.bootcampProject.dataAccess.abstracts.EmployeeRepository;
 import tobeto.bootcampProject.entity.Applicant;
 import tobeto.bootcampProject.entity.Employee;
@@ -11,27 +19,30 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/employees")
+@AllArgsConstructor
 public class EmployeeController {
-    private EmployeeRepository employeeRepository;
+   private EmployeeService employeeService;
 
-    public EmployeeController(EmployeeRepository employeeRepository) {
-        this.employeeRepository = employeeRepository;
-    }
+
     @RequestMapping("/getall")
-    public List<Employee> findAll(){
-        List<Employee> employees=employeeRepository.findAll();
-        return  employees;
+    public List<GetAllEmployeeResponse> findAll(){
+        return  employeeService.getAll();
     }
-    @RequestMapping("/save")
-    public Employee employee() {
-        Employee employee = new Employee();
-        employee.setUserName("hatice");
-        employee.setFirstName("hatice");
-        employee.setLastName("ates");
-        employee.setEmail("h@gmail.com");
-        employee.setPosition("IT");
-        employee.setPassword("11111");
-        employeeRepository.save(employee);
-        return employee;
+    @GetMapping("/{id}")//variable al pathden okur
+    public GetByIdEmployeeResponse getById(@PathVariable int id) {
+        return employeeService.getById(id);
+    }
+    @PostMapping("/add")
+    @ResponseStatus(code= HttpStatus.CREATED)
+    public  void add(@RequestBody() CreateEmployeeRequest employeeRequest){
+        employeeService.add(employeeRequest);
+    }
+    @PutMapping
+    public void update(@RequestBody() UpdateEmployeeRequest updateEmployeeRequest){
+        employeeService.update(updateEmployeeRequest);
+    }
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable int id){
+        employeeService.delete(id);
     }
 }
