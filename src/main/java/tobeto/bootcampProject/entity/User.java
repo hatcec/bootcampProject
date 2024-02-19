@@ -1,22 +1,21 @@
-package tobeto.bootcampProject.core.entities;
+package tobeto.bootcampProject.entity;
 
 import jakarta.persistence.*;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
-import org.springframework.format.annotation.DateTimeFormat;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
+import tobeto.bootcampProject.core.entities.BaseEntity;
 
 import java.time.LocalDateTime;
 
-@Data
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@MappedSuperclass
-public class User<T> {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private T id;
+@Entity
+@Table(name="users")
+@Inheritance(strategy = InheritanceType.JOINED)
+public abstract  class User extends BaseEntity<Integer>{
+
     @Column(name = "userName")
     private String userName;
     @Column(name = "firstName")

@@ -2,23 +2,20 @@ package tobeto.bootcampProject.entity;
 
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
-import jakarta.persistence.OneToMany;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.EqualsAndHashCode;
-import lombok.NoArgsConstructor;
-import tobeto.bootcampProject.core.entities.User;
+import lombok.*;
+import lombok.experimental.SuperBuilder;
 
-import java.util.List;
-
-@Data
-@Entity
+@Getter
+@Setter
 @AllArgsConstructor
+
 @NoArgsConstructor
-@Table(name ="employees" )
-@EqualsAndHashCode(callSuper = true)
-public class Employee extends User <Integer> {
+@Table(name="employees")
+@Entity
+@PrimaryKeyJoinColumn(name = "user_id")
+public class Employee extends User  {
     @Column(name="position")
     private String position;
    /* @OneToMany(mappedBy = "employee")//bir çalışanın birden fazla başvurusu olabilir

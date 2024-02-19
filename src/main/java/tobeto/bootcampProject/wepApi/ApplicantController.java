@@ -8,10 +8,6 @@ import tobeto.bootcampProject.business.requests.CreateApplicantRequest;
 import tobeto.bootcampProject.business.requests.UpdateApplicantRequest;
 import tobeto.bootcampProject.business.responses.GetAllApplicantResponse;
 import tobeto.bootcampProject.business.responses.GetByIdApplicantResponse;
-import tobeto.bootcampProject.core.entities.User;
-import tobeto.bootcampProject.dataAccess.abstracts.ApplicantRepository;
-import tobeto.bootcampProject.entity.Applicant;
-import tobeto.bootcampProject.entity.Instructor;
 
 import java.util.List;
 
