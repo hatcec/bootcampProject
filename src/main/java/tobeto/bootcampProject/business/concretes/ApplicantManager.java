@@ -26,14 +26,7 @@ public class ApplicantManager implements ApplicantService {
     @Override
     public List<GetAllApplicantResponse> getAll() {
         List<Applicant> applicants=applicantRepository.findAll();
-        /*List<GetAllApplicantResponse> getAllApplicantResponses=new ArrayList<GetAllApplicantResponse>();
-        for(Applicant applicant:applicants){
-            GetAllApplicantResponse response=new GetAllApplicantResponse();
-            response.setId(applicant.getId());
-            response.setUserName(applicant.getUserName());
-            response.setAbout(applicant.getAbout());
-            getAllApplicantResponses.add(response);
-        }*/
+
         List<GetAllApplicantResponse> getAllApplicantResponses=applicants.stream()
                 .map(applicant->modelMapperService.forResponse()
                         .map(applicant,GetAllApplicantResponse.class)).collect(Collectors.toList());

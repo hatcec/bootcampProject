@@ -44,15 +44,17 @@ public class EmployeeManager implements EmployeeService {
     }
 
     @Override
-    public void add(CreateEmployeeRequest employeeRequest) {
+    public CreateEmployeeRequest add(CreateEmployeeRequest employeeRequest) {
         Employee employee=modelMapperService.forRequest().map(employeeRequest,Employee.class);//mapped
         this.employeeRepository.save(employee);
+        return employeeRequest;
     }
 
     @Override
-    public void update(UpdateEmployeeRequest updateEmployeeRequest) {
+    public UpdateEmployeeRequest update(UpdateEmployeeRequest updateEmployeeRequest) {
         Employee employee=modelMapperService.forRequest().map(updateEmployeeRequest,Employee.class);//mapped
         this.employeeRepository.save(employee);
+        return updateEmployeeRequest;
     }
 
     @Override

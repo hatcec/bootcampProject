@@ -14,7 +14,7 @@ import java.util.List;
 public interface EmployeeService {
     List<GetAllEmployeeResponse> getAll();
     GetByIdEmployeeResponse getById(int id);
-    void add(CreateEmployeeRequest employeeRequest);
-    void update(UpdateEmployeeRequest updateEmployeeRequest);
+    CreateEmployeeRequest add(CreateEmployeeRequest employeeRequest);
+    UpdateEmployeeRequest update(UpdateEmployeeRequest updateEmployeeRequest);
     void delete(int id);
 }
