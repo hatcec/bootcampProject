@@ -9,11 +9,13 @@ import tobeto.bootcampProject.business.requests.CreateEmployeeRequest;
 import tobeto.bootcampProject.business.requests.UpdateApplicantRequest;
 import tobeto.bootcampProject.business.requests.UpdateEmployeeRequest;
 import tobeto.bootcampProject.business.responses.GetAllEmployeeResponse;
+import tobeto.bootcampProject.business.responses.GetByEmailResponse;
 import tobeto.bootcampProject.business.responses.GetByIdApplicantResponse;
 import tobeto.bootcampProject.business.responses.GetByIdEmployeeResponse;
 import tobeto.bootcampProject.dataAccess.abstracts.EmployeeRepository;
 import tobeto.bootcampProject.entity.Applicant;
 import tobeto.bootcampProject.entity.Employee;
+import tobeto.bootcampProject.entity.User;
 
 import java.util.List;
 
@@ -44,5 +46,9 @@ public class EmployeeController {
     @DeleteMapping("/{id}")
     public void delete(@PathVariable int id){
         employeeService.delete(id);
+    }
+    @GetMapping("/{email}")
+    public GetByEmailResponse getByEmail(@PathVariable String email){
+        return employeeService.getByEmail(email);
     }
 }

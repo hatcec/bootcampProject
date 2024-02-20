@@ -5,15 +5,13 @@ import org.springframework.stereotype.Service;
 import tobeto.bootcampProject.business.abstracts.EmployeeService;
 import tobeto.bootcampProject.business.requests.CreateEmployeeRequest;
 import tobeto.bootcampProject.business.requests.UpdateEmployeeRequest;
-import tobeto.bootcampProject.business.responses.GetAllApplicantResponse;
-import tobeto.bootcampProject.business.responses.GetAllEmployeeResponse;
-import tobeto.bootcampProject.business.responses.GetByIdApplicantResponse;
-import tobeto.bootcampProject.business.responses.GetByIdEmployeeResponse;
+import tobeto.bootcampProject.business.responses.*;
 import tobeto.bootcampProject.core.entities.utilities.mappers.ModelMapperService;
 import tobeto.bootcampProject.dataAccess.abstracts.ApplicantRepository;
 import tobeto.bootcampProject.dataAccess.abstracts.EmployeeRepository;
 import tobeto.bootcampProject.entity.Applicant;
 import tobeto.bootcampProject.entity.Employee;
+import tobeto.bootcampProject.entity.User;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -60,5 +58,14 @@ public class EmployeeManager implements EmployeeService {
     @Override
     public void delete(int id) {
         employeeRepository.deleteById(id);
+    }
+
+    @Override
+    public GetByEmailResponse getByEmail(String email) {
+        User user=(User)employeeRepository.getByEmail(email);//eğer id gelmezse orElse olmazsa optinal yazarız
+        GetByEmailResponse response=modelMapperService.forResponse()
+                .map(user,GetByEmailResponse.class);
+       return response;
+
     }
 }
