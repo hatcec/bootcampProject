@@ -62,7 +62,7 @@ public class EmployeeManager implements EmployeeService {
 
     @Override
     public GetByEmailResponse getByEmail(String email) {
-        User user=(User)employeeRepository.getByEmail(email);//eğer id gelmezse orElse olmazsa optinal yazarız
+        User user=(User)employeeRepository.getByEmail(email);
         GetByEmailResponse response=modelMapperService.forResponse()
                 .map(user,GetByEmailResponse.class);
        return response;
