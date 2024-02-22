@@ -9,7 +9,7 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
-@SuperBuilder
+@SuperBuilder//alt sınıflar benim fieldlarımı kullanabilirim
 @Setter
 @MappedSuperclass//super clas bunu gelir mappler
 public abstract class BaseEntity<T> {

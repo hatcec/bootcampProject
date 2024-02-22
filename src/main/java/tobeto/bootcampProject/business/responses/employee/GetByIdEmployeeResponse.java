@@ -1,4 +1,4 @@
-package tobeto.bootcampProject.business.responses;
+package tobeto.bootcampProject.business.responses.employee;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

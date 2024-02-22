@@ -1,12 +1,10 @@
 package tobeto.bootcampProject.business.abstracts;
 
-import tobeto.bootcampProject.business.requests.CreateApplicantRequest;
-import tobeto.bootcampProject.business.requests.CreateEmployeeRequest;
-import tobeto.bootcampProject.business.requests.UpdateApplicantRequest;
-import tobeto.bootcampProject.business.requests.UpdateEmployeeRequest;
-import tobeto.bootcampProject.business.responses.*;
-import tobeto.bootcampProject.entity.Employee;
-import tobeto.bootcampProject.entity.User;
+import tobeto.bootcampProject.business.requests.employee.CreateEmployeeRequest;
+import tobeto.bootcampProject.business.requests.employee.UpdateEmployeeRequest;
+import tobeto.bootcampProject.business.responses.employee.GetAllEmployeeResponse;
+import tobeto.bootcampProject.business.responses.employee.GetByEmailResponse;
+import tobeto.bootcampProject.business.responses.employee.GetByIdEmployeeResponse;
 
 import java.util.List;
 

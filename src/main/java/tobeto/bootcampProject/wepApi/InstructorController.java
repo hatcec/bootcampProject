@@ -1,21 +1,13 @@
 package tobeto.bootcampProject.wepApi;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
-import tobeto.bootcampProject.business.abstracts.EmployeeService;
 import tobeto.bootcampProject.business.abstracts.InstructorService;
-import tobeto.bootcampProject.business.requests.CreateEmployeeRequest;
-import tobeto.bootcampProject.business.requests.CreateInstructorRequest;
-import tobeto.bootcampProject.business.requests.UpdateEmployeeRequest;
-import tobeto.bootcampProject.business.requests.UpdateInstructorRequest;
-import tobeto.bootcampProject.business.responses.GetAllEmployeeResponse;
-import tobeto.bootcampProject.business.responses.GetAllInstructorResponse;
-import tobeto.bootcampProject.business.responses.GetByIdEmployeeResponse;
-import tobeto.bootcampProject.business.responses.GetByIdInstructorResponse;
-import tobeto.bootcampProject.dataAccess.abstracts.InstructorRepository;
-import tobeto.bootcampProject.entity.Instructor;
+import tobeto.bootcampProject.business.requests.instructor.CreateInstructorRequest;
+import tobeto.bootcampProject.business.requests.instructor.UpdateInstructorRequest;
+import tobeto.bootcampProject.business.responses.instructor.GetAllInstructorResponse;
+import tobeto.bootcampProject.business.responses.instructor.GetByIdInstructorResponse;
 
 import java.util.List;
 

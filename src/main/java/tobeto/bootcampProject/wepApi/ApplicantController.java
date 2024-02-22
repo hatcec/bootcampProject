@@ -4,10 +4,10 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;
 import tobeto.bootcampProject.business.abstracts.ApplicantService;
-import tobeto.bootcampProject.business.requests.CreateApplicantRequest;
-import tobeto.bootcampProject.business.requests.UpdateApplicantRequest;
-import tobeto.bootcampProject.business.responses.GetAllApplicantResponse;
-import tobeto.bootcampProject.business.responses.GetByIdApplicantResponse;
+import tobeto.bootcampProject.business.requests.applicant.CreateApplicantRequest;
+import tobeto.bootcampProject.business.requests.applicant.UpdateApplicantRequest;
+import tobeto.bootcampProject.business.responses.applicant.GetAllApplicantResponse;
+import tobeto.bootcampProject.business.responses.applicant.GetByIdApplicantResponse;
 
 import java.util.List;
 

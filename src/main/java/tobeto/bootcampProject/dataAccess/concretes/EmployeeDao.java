@@ -3,7 +3,7 @@ package tobeto.bootcampProject.dataAccess.concretes;
 import jakarta.persistence.EntityManager;
 import jakarta.persistence.TypedQuery;
 import lombok.AllArgsConstructor;
-import tobeto.bootcampProject.business.responses.GetByEmailResponse;
+import tobeto.bootcampProject.business.responses.employee.GetByEmailResponse;
 import tobeto.bootcampProject.dataAccess.abstracts.EmployeeRepository;
 
 import java.util.List;

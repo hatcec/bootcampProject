@@ -1,20 +1,17 @@
 package tobeto.bootcampProject.business.concretes;
 
 import lombok.AllArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import tobeto.bootcampProject.business.abstracts.ApplicantService;
-import tobeto.bootcampProject.business.requests.CreateApplicantRequest;
-import tobeto.bootcampProject.business.requests.UpdateApplicantRequest;
-import tobeto.bootcampProject.business.responses.GetAllApplicantResponse;
-import tobeto.bootcampProject.business.responses.GetByIdApplicantResponse;
-import tobeto.bootcampProject.core.entities.utilities.mappers.ModelMapperService;
+import tobeto.bootcampProject.business.requests.applicant.CreateApplicantRequest;
+import tobeto.bootcampProject.business.requests.applicant.UpdateApplicantRequest;
+import tobeto.bootcampProject.business.responses.applicant.GetAllApplicantResponse;
+import tobeto.bootcampProject.business.responses.applicant.GetByIdApplicantResponse;
+import tobeto.bootcampProject.core.mappers.ModelMapperService;
 import tobeto.bootcampProject.dataAccess.abstracts.ApplicantRepository;
 import tobeto.bootcampProject.entity.Applicant;
 
-import java.util.ArrayList;
 import java.util.List;
-import java.util.Optional;
 import java.util.stream.Collectors;
 
 @Service

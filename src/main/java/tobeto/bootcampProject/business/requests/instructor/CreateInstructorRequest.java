@@ -1,4 +1,4 @@
-package tobeto.bootcampProject.business.requests;
+package tobeto.bootcampProject.business.requests.instructor;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
