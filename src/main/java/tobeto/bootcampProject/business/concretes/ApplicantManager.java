@@ -50,8 +50,8 @@ public class ApplicantManager implements ApplicantService {
 
     @Override
     public void update(UpdateApplicantRequest updateApplicantRequest) {
-        Applicant applicant=modelMapperService.forRequest().map(updateApplicantRequest,Applicant.class);
-        applicantRepository.save(applicant);//id elimde olduğu için update eder.
+        Applicant applicant = modelMapperService.forRequest().map(updateApplicantRequest,Applicant.class);
+        applicantRepository.save(applicant);
     }
 
     @Override
