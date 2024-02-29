@@ -8,6 +8,5 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateApplicationStateRequest {
-    private int id;
     private int state;
 }

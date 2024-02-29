@@ -5,4 +5,5 @@ import tobeto.bootcampProject.entity.Application;
 import tobeto.bootcampProject.entity.BootCamp;
 
 public interface BootCampRepository extends JpaRepository<BootCamp,Integer> {
+   // boolean existByName(String name);//exists varmı?
 }

@@ -8,7 +8,6 @@ import lombok.Setter;
 @Getter
 @Setter
 public class CreateApplicationRequest {
-    private int id;
     private int applicantId;
     private int bootcampId;
     private int applicationStateId;

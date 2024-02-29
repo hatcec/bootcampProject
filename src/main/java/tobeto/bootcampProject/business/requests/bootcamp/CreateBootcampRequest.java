@@ -10,7 +10,6 @@ import java.time.LocalDateTime;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateBootcampRequest {
-    private int id;
     private String name;
     private int instructorId;
     private LocalDateTime startDate;

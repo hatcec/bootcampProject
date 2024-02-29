@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import tobeto.bootcampProject.core.entities.BaseEntity;
 
 import java.time.LocalDateTime;
 @Getter
@@ -13,15 +14,18 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Entity
 @Table(name="bootCamps")
-public class BootCamp {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+public class BootCamp extends BaseEntity<Integer> {
+
     @Column(name = "name")
     private  String name;
-    private  int instructor_id;
+    @ManyToOne
+    @JoinColumn(name = "instructor_id")
+    private  Instructor  instructor;
+    @Column(name = "startDate")
     private LocalDateTime startDate;
+    @Column(name = "endDate")
     private  LocalDateTime endDate;
-    private  int bootcampState_id;
+    @OneToOne
+    @JoinColumn(name = "bootcampState_id")
+    private  BootCampState bootCampState;
 }

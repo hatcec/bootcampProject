@@ -9,7 +9,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetByEmailResponse {
     private int id;
-    private  String userName;
-    private  String email;
+    private String userName;
+    private  String firstName;
+    private  String lastName;
+    private String position;
 
 }

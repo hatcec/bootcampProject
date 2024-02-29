@@ -8,8 +8,8 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class CreateEmployeeRequest {
-    private String position;
     private String userName;
     private  String firstName;
     private  String lastName;
+    private String position;
 }
