@@ -20,4 +20,5 @@ public interface ApplicantService {
     DataResult<ApplicantResponse> update(UpdateApplicantRequest updateApplicantRequest);
 
     Result delete(int id);
+
 }

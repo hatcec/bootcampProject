@@ -8,6 +8,7 @@ import tobeto.bootcampProject.business.requests.instructor.UpdateInstructorReque
 import tobeto.bootcampProject.business.responses.instructor.GetAllInstructorResponse;
 import tobeto.bootcampProject.business.responses.instructor.GetByIdInstructorResponse;
 import tobeto.bootcampProject.business.responses.instructor.InstructorResponse;
+import tobeto.bootcampProject.business.rules.UserBusinessRules;
 import tobeto.bootcampProject.core.mappers.ModelMapperService;
 import tobeto.bootcampProject.core.results.DataResult;
 import tobeto.bootcampProject.core.results.Result;
@@ -24,6 +25,7 @@ import java.util.stream.Collectors;
 public class InstructorManager implements InstructorService {
     private InstructorRepository instructorRepository;
     private ModelMapperService modelMapperService;
+    private UserBusinessRules userBusinessRules;
     @Override
     public DataResult<List<GetAllInstructorResponse>> getAll() {
         List<Instructor> instructors=instructorRepository.findAll();
@@ -44,6 +46,7 @@ public class InstructorManager implements InstructorService {
 
     @Override
     public DataResult<InstructorResponse> add(CreateInstructorRequest createInstructorRequest) {
+        userBusinessRules.checkIfUserNameExists(createInstructorRequest.getUserName());
         Instructor instructor=modelMapperService.forRequest().map(createInstructorRequest,Instructor.class);//mapped
         this.instructorRepository.save(instructor);
         InstructorResponse response=modelMapperService.forResponse().map(instructor, InstructorResponse.class);

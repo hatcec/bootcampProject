@@ -9,6 +9,7 @@ import tobeto.bootcampProject.business.responses.employee.EmployeeResponse;
 import tobeto.bootcampProject.business.responses.employee.GetAllEmployeeResponse;
 import tobeto.bootcampProject.business.responses.employee.GetByEmailResponse;
 import tobeto.bootcampProject.business.responses.employee.GetByIdEmployeeResponse;
+import tobeto.bootcampProject.business.rules.UserBusinessRules;
 import tobeto.bootcampProject.core.mappers.ModelMapperService;
 import tobeto.bootcampProject.core.results.DataResult;
 import tobeto.bootcampProject.core.results.Result;
@@ -28,6 +29,7 @@ public class EmployeeManager implements EmployeeService {
 
     private EmployeeRepository employeeRepository;
     private ModelMapperService modelMapperService;
+    private UserBusinessRules userBusinessRules;
 
     @Override
     public DataResult<List<GetAllEmployeeResponse>> getAll() {
@@ -49,6 +51,7 @@ public class EmployeeManager implements EmployeeService {
 
     @Override
     public DataResult<EmployeeResponse> add(CreateEmployeeRequest employeeRequest) {
+        userBusinessRules.checkIfUserNameExists(employeeRequest.getUserName());
         Employee employee = modelMapperService.forRequest().map(employeeRequest, Employee.class);//mapped
         employee.setCreatedAt(LocalDateTime.now());
         this.employeeRepository.save(employee);

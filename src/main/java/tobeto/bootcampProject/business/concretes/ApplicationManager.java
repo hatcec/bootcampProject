@@ -10,6 +10,7 @@ import tobeto.bootcampProject.business.requests.application.UpdateApplicationReq
 import tobeto.bootcampProject.business.responses.application.ApplicationResponse;
 import tobeto.bootcampProject.business.responses.application.GetAllApplicationsResponse;
 import tobeto.bootcampProject.business.responses.application.GetByIdApplicationResponse;
+import tobeto.bootcampProject.business.rules.ApplicationBusinessRules;
 import tobeto.bootcampProject.core.exceptions.types.BlacklistException;
 import tobeto.bootcampProject.core.mappers.ModelMapperService;
 import tobeto.bootcampProject.core.results.DataResult;
@@ -29,7 +30,7 @@ import java.util.stream.Collectors;
 public class ApplicationManager implements ApplicationService {
     private ApplicationRepository applicationRepository;
     private ModelMapperService modelMapperService;
-    private BlackListRepository blackListRepository;
+    private ApplicationBusinessRules applicationBusinessRules;
     @Override
 
     public DataResult<List<GetAllApplicationsResponse>> getAll() {
@@ -52,10 +53,11 @@ public class ApplicationManager implements ApplicationService {
 
     @Override
     public DataResult<ApplicationResponse> add(CreateApplicationRequest applicationRequest) {
-        Optional<BlackList> optionalBlackList=blackListRepository.findById(applicationRequest.getApplicantId());
+        /*Optional<BlackList> optionalBlackList=blackListRepository.findById(applicationRequest.getApplicantId());
         if(optionalBlackList!=null){
             throw  new BlacklistException("kursa başvuramazsınız blacklisttesiniz!");
-        }
+        }**/
+        applicationBusinessRules.checkIfApplicantIdExists(applicationRequest.getApplicantId());
         Application application = modelMapperService.forRequest().map(applicationRequest,Application.class);
         this.applicationRepository.save(application);
         ApplicationResponse response=modelMapperService.forResponse().map(application, ApplicationResponse.class);

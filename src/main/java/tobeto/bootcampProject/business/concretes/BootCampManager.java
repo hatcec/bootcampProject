@@ -8,6 +8,7 @@ import tobeto.bootcampProject.business.requests.bootcamp.UpdateBootcampRequest;
 import tobeto.bootcampProject.business.responses.bootcamp.BootcampResponse;
 import tobeto.bootcampProject.business.responses.bootcamp.GetAllBootcampsResponse;
 import tobeto.bootcampProject.business.responses.bootcamp.GetByIdBootcampResponse;
+import tobeto.bootcampProject.business.rules.ApplicationBusinessRules;
 import tobeto.bootcampProject.business.rules.BootcampBusinessRules;
 import tobeto.bootcampProject.core.mappers.ModelMapperService;
 import tobeto.bootcampProject.core.results.DataResult;
@@ -25,7 +26,7 @@ import java.util.stream.Collectors;
 public class BootCampManager implements BootCampService {
     private BootCampRepository bootcampRepository;
     private ModelMapperService modelMapperService;
-    private BootcampBusinessRules bootcampBusinessRules;
+    private ApplicationBusinessRules applicationBusinessRules;
     @Override
     public DataResult<List<GetAllBootcampsResponse>> getAll() {
         List<BootCamp> bootcamps = bootcampRepository.findAll();
@@ -47,7 +48,7 @@ public class BootCampManager implements BootCampService {
 
     @Override
     public DataResult<BootcampResponse> add(CreateBootcampRequest bootcampRequest) {
-        //bootcampBusinessRules.checkIfApplicantExist(bootcampRequest.getName());
+        applicationBusinessRules.checkIfUserNameExists(bootcampRequest.getUserName());
         BootCamp bootcamp = modelMapperService.forRequest().map(bootcampRequest, BootCamp.class);
         this.bootcampRepository.save(bootcamp);
         BootcampResponse response=modelMapperService.forResponse().map(bootcamp, BootcampResponse.class);

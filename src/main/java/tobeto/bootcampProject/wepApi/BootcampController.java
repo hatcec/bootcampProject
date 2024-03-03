@@ -4,13 +4,9 @@ import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-import tobeto.bootcampProject.business.abstracts.ApplicationService;
 import tobeto.bootcampProject.business.abstracts.BootCampService;
-import tobeto.bootcampProject.business.requests.applicant.CreateApplicantRequest;
-import tobeto.bootcampProject.business.requests.application.UpdateApplicationRequest;
 import tobeto.bootcampProject.business.requests.bootcamp.CreateBootcampRequest;
 import tobeto.bootcampProject.business.requests.bootcamp.UpdateBootcampRequest;
-import tobeto.bootcampProject.business.rules.BootcampBusinessRules;
 
 @RestController
 @RequestMapping("/bootcamps")
