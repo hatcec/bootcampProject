@@ -48,7 +48,6 @@ public class BootCampManager implements BootCampService {
 
     @Override
     public DataResult<BootcampResponse> add(CreateBootcampRequest bootcampRequest) {
-        applicationBusinessRules.checkIfUserNameExists(bootcampRequest.getUserName());
         BootCamp bootcamp = modelMapperService.forRequest().map(bootcampRequest, BootCamp.class);
         this.bootcampRepository.save(bootcamp);
         BootcampResponse response=modelMapperService.forResponse().map(bootcamp, BootcampResponse.class);

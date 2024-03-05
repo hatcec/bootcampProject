@@ -16,12 +16,12 @@ import tobeto.bootcampProject.core.entities.BaseEntity;
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Application extends BaseEntity<Integer> {
     @ManyToOne
-    @JoinColumn(name="applicant_id")
+    @JoinColumn(name="applicantid")
     private  Applicant applicant ;
     @ManyToOne
-    @JoinColumn(name="bootcamp_id")
+    @JoinColumn(name="bootcampid")
     private  BootCamp bootCamp ;
     @ManyToOne
-    @JoinColumn(name="applicationState_id")
+    @JoinColumn(name="applicationStateid")
     private  ApplicationState applicationState ;
 }

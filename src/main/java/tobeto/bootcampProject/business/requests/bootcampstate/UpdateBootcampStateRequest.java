@@ -1,5 +1,6 @@
 package tobeto.bootcampProject.business.requests.bootcampstate;
 
+import jakarta.validation.constraints.Positive;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -8,6 +9,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class UpdateBootcampStateRequest {
+    @Positive
     private int id;
     private int state;
 }

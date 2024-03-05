@@ -18,9 +18,10 @@ import java.util.Date;
 public class BlackList extends BaseEntity<Integer> {
     @Column(name="reason")
     private String reason;
+    @Temporal(TemporalType.DATE)
     @Column (name="date")
     private Date date;
-    @ManyToOne
-    @JoinColumn(name = "applicant_id")
+    @OneToOne
+    @JoinColumn(name="appliantId")
     private  Applicant applicant;
 }

@@ -5,18 +5,19 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import tobeto.bootcampProject.core.entities.BaseEntity;
+
+import java.util.List;
 
 @Getter
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name="bootCamp_states")
-public class BootCampState {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "id")
-    private int id;
+@Table(name="bootCampstates")
+public class BootCampState extends BaseEntity<Integer> {
     @Column(name="name")
     private  String name;
+    @OneToMany(mappedBy = "bootcampState")
+    private List<BootCamp> bootcamps;
 }

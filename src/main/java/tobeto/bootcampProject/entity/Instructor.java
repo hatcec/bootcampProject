@@ -5,6 +5,8 @@ import lombok.*;
 import lombok.experimental.SuperBuilder;
 import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.SuperCall;
 
+import java.util.List;
+
 @Getter
 @Setter
 @AllArgsConstructor
@@ -13,7 +15,8 @@ import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.SuperCa
 @Entity
 @PrimaryKeyJoinColumn(name = "user_id")
 public class Instructor extends User  {
-
     @Column(name = "companyName")
     private String companyName;
+    @OneToMany(mappedBy = "instructor")
+    private List<BootCamp> bootcamps;
 }

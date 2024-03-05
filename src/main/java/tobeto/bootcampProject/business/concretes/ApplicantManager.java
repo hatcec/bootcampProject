@@ -9,6 +9,7 @@ import tobeto.bootcampProject.business.responses.applicant.ApplicantResponse;
 import tobeto.bootcampProject.business.responses.applicant.GetAllApplicantResponse;
 import tobeto.bootcampProject.business.responses.applicant.GetByIdApplicantResponse;
 import tobeto.bootcampProject.business.rules.UserBusinessRules;
+import tobeto.bootcampProject.core.aspects.logging.Loggable;
 import tobeto.bootcampProject.core.mappers.ModelMapperService;
 import tobeto.bootcampProject.core.results.DataResult;
 import tobeto.bootcampProject.core.results.Result;
@@ -31,6 +32,7 @@ public class ApplicantManager implements ApplicantService {
 
 
     @Override
+    @Loggable
     public DataResult<List<GetAllApplicantResponse>> getAll() {
         List<Applicant> applicants = applicantRepository.findAll();
         List<GetAllApplicantResponse> getAllApplicantResponses = applicants.stream()

@@ -26,7 +26,7 @@ import java.util.stream.Collectors;
 @AllArgsConstructor
 public class BlackListManager implements BlackListService {
     private ModelMapperService modelMapperService;
-    BlackListRepository blackListRepository;
+    private BlackListRepository blackListRepository;
     @Override
     public DataResult<List<GetAllBlackListResponse>> getAll() {
         List<BlackList> blackLists=blackListRepository.findAll();

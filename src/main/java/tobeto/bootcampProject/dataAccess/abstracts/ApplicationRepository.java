@@ -7,5 +7,5 @@ import tobeto.bootcampProject.entity.Application;
 import tobeto.bootcampProject.entity.BootCamp;
 
 public interface ApplicationRepository extends JpaRepository <Application ,Integer> {
-    Applicant existByName(String name);
+    Application getByApplicantId(int id);
 }

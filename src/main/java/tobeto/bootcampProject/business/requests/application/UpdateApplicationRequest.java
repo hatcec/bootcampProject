@@ -10,6 +10,8 @@ import lombok.NoArgsConstructor;
 public class UpdateApplicationRequest {
     private int id;
     private int applicantId;
+    private String applicantUserName;
     private int bootcampId;
+    private String bootcampname;
     private int applicationStateId;
 }

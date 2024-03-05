@@ -17,5 +17,5 @@ public class GetAllBlackListResponse {
     private  int id;
     private String reason;
     private Date date;
-    private int applicant_id;
+    private int applicant_id;//firstnme lastname email gelsin!
 }

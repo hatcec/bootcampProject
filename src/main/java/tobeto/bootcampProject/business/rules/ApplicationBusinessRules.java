@@ -7,6 +7,7 @@ import tobeto.bootcampProject.dataAccess.abstracts.ApplicationRepository;
 import tobeto.bootcampProject.dataAccess.abstracts.BlackListRepository;
 import tobeto.bootcampProject.dataAccess.abstracts.BootCampRepository;
 import tobeto.bootcampProject.entity.Applicant;
+import tobeto.bootcampProject.entity.Application;
 import tobeto.bootcampProject.entity.BlackList;
 @AllArgsConstructor
 @Service
@@ -20,9 +21,9 @@ public class ApplicationBusinessRules {
             throw  new BusinessException("bu öğrenci blacklistte olduğu için kampa başvuru yapamaz.");
         }
     }
-    public  void checkIfUserNameExists(String name){
-        Applicant applicant= applicationRepository.existByName(name);
-        if(applicant!=null){
+    public  void checkIfUserNameExists(int id){
+        Application application= applicationRepository.getByApplicantId(id);
+        if(application!=null){
             throw  new BusinessException("Bu eğitime daha önce başvuru yaptınız.");
         }
     }

@@ -57,7 +57,8 @@ public class ApplicationManager implements ApplicationService {
         if(optionalBlackList!=null){
             throw  new BlacklistException("kursa başvuramazsınız blacklisttesiniz!");
         }**/
-        applicationBusinessRules.checkIfApplicantIdExists(applicationRequest.getApplicantId());
+        /*applicationBusinessRules.checkIfApplicantIdExists(applicationRequest.getApplicantId());
+        applicationBusinessRules.checkIfUserNameExists(applicationRequest.getApplicantId());*/
         Application application = modelMapperService.forRequest().map(applicationRequest,Application.class);
         this.applicationRepository.save(application);
         ApplicationResponse response=modelMapperService.forResponse().map(application, ApplicationResponse.class);

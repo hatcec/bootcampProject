@@ -11,5 +11,5 @@ public class ApplicationResponse {
     private int id;
     private int applicantId;
     private int bootcampId;
-    private int getApplicantId;
+    private int applicationStateId;
 }

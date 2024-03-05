@@ -1,11 +1,10 @@
 package tobeto.bootcampProject.entity;
 
-import jakarta.persistence.Column;
-import jakarta.persistence.Entity;
-import jakarta.persistence.PrimaryKeyJoinColumn;
-import jakarta.persistence.Table;
+import jakarta.persistence.*;
 import lombok.*;
 import lombok.experimental.SuperBuilder;
+
+import java.util.List;
 
 @Getter
 @Setter
@@ -19,6 +18,8 @@ import lombok.experimental.SuperBuilder;
 public class Applicant extends User  {
     @Column(name = "about")
     private String about;
-
-
+    @OneToOne(mappedBy = "applicant", cascade =CascadeType.REMOVE)
+    private BlackList blackList;
+    @OneToMany(mappedBy = "applicant", cascade = CascadeType.REMOVE)
+    private List<Application> applications;
 }
