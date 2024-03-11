@@ -1,4 +1,4 @@
-package tobeto.bootcampProject.core.crosscuttingconcerns.loggingn;
+package tobeto.bootcampProject.core.crosscuttingconcerns.logging;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;

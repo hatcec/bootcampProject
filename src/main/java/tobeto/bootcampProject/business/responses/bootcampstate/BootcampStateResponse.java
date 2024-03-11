@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class BootcampStateResponse {
     private int id;
-    private String state;
+    private String name;
 }

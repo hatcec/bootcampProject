@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 import tobeto.bootcampProject.core.exceptions.types.BusinessException;
 import tobeto.bootcampProject.dataAccess.abstracts.ApplicationRepository;
 import tobeto.bootcampProject.dataAccess.abstracts.BlackListRepository;
-import tobeto.bootcampProject.dataAccess.abstracts.BootCampRepository;
-import tobeto.bootcampProject.entity.Applicant;
 import tobeto.bootcampProject.entity.Application;
 import tobeto.bootcampProject.entity.BlackList;
 @AllArgsConstructor

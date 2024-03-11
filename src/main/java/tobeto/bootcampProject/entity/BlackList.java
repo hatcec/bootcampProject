@@ -21,7 +21,7 @@ public class BlackList extends BaseEntity<Integer> {
     @Temporal(TemporalType.DATE)
     @Column (name="date")
     private Date date;
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     @JoinColumn(name="appliantId")
     private  Applicant applicant;
 }

@@ -2,8 +2,6 @@ package tobeto.bootcampProject.entity;
 
 import jakarta.persistence.*;
 import lombok.*;
-import lombok.experimental.SuperBuilder;
-import org.modelmapper.internal.bytebuddy.implementation.bind.annotation.SuperCall;
 
 import java.util.List;
 

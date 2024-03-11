@@ -5,8 +5,6 @@ import org.springframework.stereotype.Service;
 import tobeto.bootcampProject.business.abstracts.BlackListService;
 import tobeto.bootcampProject.business.requests.blacklist.CreateBlackListRequest;
 import tobeto.bootcampProject.business.requests.blacklist.UpdateBlackListRequest;
-import tobeto.bootcampProject.business.responses.applicant.GetAllApplicantResponse;
-import tobeto.bootcampProject.business.responses.applicant.GetByIdApplicantResponse;
 import tobeto.bootcampProject.business.responses.blacklist.BlackListResponse;
 import tobeto.bootcampProject.business.responses.blacklist.GetAllBlackListResponse;
 import tobeto.bootcampProject.business.responses.blacklist.GetByIdBlackListResponse;
@@ -16,7 +14,6 @@ import tobeto.bootcampProject.core.results.Result;
 import tobeto.bootcampProject.core.results.SuccessDataResult;
 import tobeto.bootcampProject.core.results.SuccessResult;
 import tobeto.bootcampProject.dataAccess.abstracts.BlackListRepository;
-import tobeto.bootcampProject.entity.Applicant;
 import tobeto.bootcampProject.entity.BlackList;
 
 import java.util.List;

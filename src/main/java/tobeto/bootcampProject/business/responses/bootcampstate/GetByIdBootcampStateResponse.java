@@ -8,5 +8,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class GetByIdBootcampStateResponse {
     private int id;
-    private String state;
+    private String name;
 }

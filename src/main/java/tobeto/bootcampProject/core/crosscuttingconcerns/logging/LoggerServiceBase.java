@@ -1,4 +1,4 @@
-package tobeto.bootcampProject.core.crosscuttingconcerns.loggingn;
+package tobeto.bootcampProject.core.crosscuttingconcerns.logging;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -37,6 +37,6 @@ public abstract class LoggerServiceBase {
 		logger.error(message);
 	}
 	
-	public abstract void log(String methodName,List<LogParameter> logParameters,String userName);
+	public abstract void log(String methodName,List<LogParameter> logParameters,String userName);//log yapılacak kısım
 	
 }

@@ -20,4 +20,5 @@ public class BootCampState extends BaseEntity<Integer> {
     private  String name;
     @OneToMany(mappedBy = "bootcampState")
     private List<BootCamp> bootcamps;
+
 }

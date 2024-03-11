@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class CreateBootcampStateRequest {
 
-    private int state;
+    private String name;
 }

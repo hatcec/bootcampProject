@@ -18,20 +18,24 @@ import java.util.List;
 @Table(name="bootCamps")
 public class BootCamp extends BaseEntity<Integer> {
 
-    @Column(name = "name")
-    private  String name;
-    @ManyToOne
-    @JoinColumn(name = "instructorid")
-    private  Instructor  instructor;
+    @Column(name="name")
+    private String name;
+
     @Column(name = "startDate")
-    @Temporal(TemporalType.DATE)
     private LocalDateTime startDate;
+
     @Column(name = "endDate")
-    @Temporal(TemporalType.DATE)
     private  LocalDateTime endDate;
-    @OneToOne
-    @JoinColumn(name = "bootcampStateid")
-    private  BootCampState bootCampState;
-    @OneToMany(mappedBy = "bootcamp")
+
+    @ManyToOne
+    @JoinColumn(name = "instructorId")
+    private Instructor instructor;
+
+    @ManyToOne
+    @JoinColumn(name = "bootcampStateId")
+    private BootCampState bootcampState;
+
+    @OneToMany(mappedBy = "bootcamp", cascade = CascadeType.REMOVE)
     private List<Application> applications;
+
 }

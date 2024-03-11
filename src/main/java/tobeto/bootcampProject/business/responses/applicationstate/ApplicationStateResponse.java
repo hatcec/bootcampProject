@@ -9,5 +9,5 @@ import lombok.NoArgsConstructor;
 @Data
 public class ApplicationStateResponse {
     private int id;
-    private String state;
+    private String name;
 }

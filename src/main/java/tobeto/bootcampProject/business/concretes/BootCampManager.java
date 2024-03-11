@@ -9,7 +9,6 @@ import tobeto.bootcampProject.business.responses.bootcamp.BootcampResponse;
 import tobeto.bootcampProject.business.responses.bootcamp.GetAllBootcampsResponse;
 import tobeto.bootcampProject.business.responses.bootcamp.GetByIdBootcampResponse;
 import tobeto.bootcampProject.business.rules.ApplicationBusinessRules;
-import tobeto.bootcampProject.business.rules.BootcampBusinessRules;
 import tobeto.bootcampProject.core.mappers.ModelMapperService;
 import tobeto.bootcampProject.core.results.DataResult;
 import tobeto.bootcampProject.core.results.Result;
@@ -26,7 +25,6 @@ import java.util.stream.Collectors;
 public class BootCampManager implements BootCampService {
     private BootCampRepository bootcampRepository;
     private ModelMapperService modelMapperService;
-    private ApplicationBusinessRules applicationBusinessRules;
     @Override
     public DataResult<List<GetAllBootcampsResponse>> getAll() {
         List<BootCamp> bootcamps = bootcampRepository.findAll();

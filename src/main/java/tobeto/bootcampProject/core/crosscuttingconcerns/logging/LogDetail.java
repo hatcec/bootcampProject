@@ -1,4 +1,4 @@
-package tobeto.bootcampProject.core.crosscuttingconcerns.loggingn;
+package tobeto.bootcampProject.core.crosscuttingconcerns.logging;
 
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;

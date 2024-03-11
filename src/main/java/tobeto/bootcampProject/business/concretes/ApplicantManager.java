@@ -16,7 +16,6 @@ import tobeto.bootcampProject.core.results.Result;
 import tobeto.bootcampProject.core.results.SuccessDataResult;
 import tobeto.bootcampProject.core.results.SuccessResult;
 import tobeto.bootcampProject.dataAccess.abstracts.ApplicantRepository;
-import tobeto.bootcampProject.dataAccess.abstracts.UserRepository;
 import tobeto.bootcampProject.entity.Applicant;
 
 import java.util.List;

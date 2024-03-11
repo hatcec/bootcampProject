@@ -11,5 +11,5 @@ import lombok.NoArgsConstructor;
 public class UpdateBootcampStateRequest {
     @Positive
     private int id;
-    private int state;
+    private String name;
 }
